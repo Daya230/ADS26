@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin>> n;
+    vector<int> a(n);
+    for(int i =0; i< n; i++){
+        cin>> a[i];
+    }
+    int x;
+    cin>> x;
+    int left = 0;
+    int right = n-1;
+    bool found  = false;
+    while (left<=right){
+        int mid = left +(right -left)/2;
+        if(a[mid]==x){
+            found = true;
+            break;
+        }
+        else if(a[mid]==x){
+            found = true;
+            break;
+        }
+        else if(a[mid]<x){
+            left = mid +1;
+        }
+        else{
+            right = mid - 1;
+        }
+    }
+
+    if(found){
+        cout<<"Yes";
+    }
+    else{
+        cout<< "No";
+    }
+    return 0;
+}
